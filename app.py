@@ -15,7 +15,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 HTML_TEMPLATE = Template("""
 <h1>${note_ID}</h1>
 
-			<textarea id="textbox" rows="4" cols="50">
+			<textarea readonly id="textbox" rows="4" cols="50">
 			${content}
 			</textarea>
 """)
