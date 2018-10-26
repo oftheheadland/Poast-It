@@ -2,4 +2,3 @@ Flask
 gunicorn
 psycopg2
 pycryptodome
-hashlib
