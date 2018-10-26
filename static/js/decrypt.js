@@ -7,7 +7,7 @@ $('#decrypt').on('submit', function (e) {
     let key = $('#key').val();
     e.preventDefault();
 
-    let ajaxURL = 'http://127.0.0.1:5000/decrypt/'
+    let ajaxURL = '../decrypt/'
     $.ajax({
         url: ajaxURL,
         data: { 'text': query,
