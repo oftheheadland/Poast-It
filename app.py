@@ -8,8 +8,12 @@ import os
 import random
 import string
 import base64
-from Crypto import Random
-from Crypto.Cipher import AES
+import subprocess
+try:
+    from Crypto import Random
+    from Crypto.Cipher import AES
+except:
+    subprocess.call(['pip', 'install', 'pycryptodome'])
 import hashlib
 import json
 import time    
