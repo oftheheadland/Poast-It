@@ -11,6 +11,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/style.css') }}">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/jquery-linedtextarea.css') }}">
+	
+
+
 </head>
 
 <body>
@@ -25,7 +29,7 @@
 					<div>
 						<form autocomplete="off" method="post" id="form">
 							<p>Enter the text you would like to encrypt.</p>
-							<textarea style="width: 100%;" autocomplete="false" placeholder="Your text here :)"id="textbox" rows="4" cols="50"></textarea>
+							<textarea class="lined" style="width: 100%;" autocomplete="false" placeholder="Your text here :)"id="textbox" rows="4" cols="50"></textarea>
 							<br>
 							<p>Enter a key to encrypt it with. Only share this with the intended reader.</p>
 							<input id="key" placeholder="Your key here"> or <button type="button" onclick="makeid(); return false;">Generate a
@@ -66,8 +70,16 @@
 	<footer class="container-fluid text-center">
 		<p>Poast-It 2018</p>
 	</footer>
+
+	<script>
+			$(function() {
+				$(".lined").linedtextarea();
+			});
+	</script>
+			
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="{{ url_for('static', filename='js/encrypt.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery-linedtextarea.js') }}"></script>
 </body>
 
 </html>

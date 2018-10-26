@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/style.css') }}">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/jquery-linedtextarea.css') }}">
 </head>
 
 <body>
@@ -25,16 +26,14 @@
 				<div class="col-sm-6">
 					Encrypted Text:
 					<br>
-					<textarea readonly id="textbox" rows="4" cols="50">
-			{{content}}
-			</textarea>
+					<textarea class="lined" readonly id="textbox" rows="4" cols="50">{{content}}</textarea>
 					<br>
 					<br>
 				</div>
 				<div class="col-sm-6">
 					Decrypted text:
 					<br>
-					<textarea readonly id="decrypted" rows="4" cols="50"></textarea>
+					<textarea class="lined" readonly id="decrypted" rows="4" cols="50"></textarea>
 				</div>
 			</div>
 				<div class="row">
@@ -52,9 +51,16 @@
 	<footer class="container-fluid text-center">
 		<p>Poast-It</p>
 	</footer>
+	
+	<script>
+			$(function() {
+				$(".lined").linedtextarea();
+			});
+	</script>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="{{ url_for('static', filename='js/decrypt.js') }}"></script>
-
+	<script src="{{ url_for('static', filename='js/jquery-linedtextarea.js') }}"></script>
 </body>
 
 </html>
