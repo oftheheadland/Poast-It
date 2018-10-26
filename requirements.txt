@@ -1,5 +1,5 @@
 Flask
 gunicorn
 psycopg2
-Crypto
+pycryptodome==3.6.6
 hashlib
