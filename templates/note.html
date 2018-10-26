@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Poast-It</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1><a style="color: white;" href="../">Poast-It</a></h1>
+		<p>Encrypted, secure communication.</p>
+	</div>
+	<div class="container-fluid">
+			<div class="container">
+		<div class="row">
+		
+				<div class="col-sm-6">
+					Encrypted Text:
+					<br>
+					<textarea readonly id="textbox" rows="4" cols="50">
+			{{content}}
+			</textarea>
+					<br>
+					<br>
+				</div>
+				<div class="col-sm-6">
+					Decrypted text:
+					<br>
+					<textarea readonly id="decrypted" rows="4" cols="50"></textarea>
+				</div>
+			</div>
+				<div class="row">
+					<form autocomplete="off" method="post" id="decrypt">
+						Key:
+
+						<input id="key">
+
+						<button class="btn btn-default btn-lg">Decrypt</button>
+					</form>
+				</div>
+			</div>
+	
+	</div>
+	<footer class="container-fluid text-center">
+		<p>Poast-It</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="{{ url_for('static', filename='js/decrypt.js') }}"></script>
+
+</body>
+
+</html>
