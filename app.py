@@ -42,9 +42,7 @@ class AESCipher:
 
 
 app = Flask(__name__)
-#DATABASE_URL = os.environ['DATABASE_URL']
-DATABASE_URL = 'postgres://gxdvbdjpsgzase:3b9c304dab325ba9788e1f3f882d17f5c3e57767fcba1222b2a1f318b16dba24@ec2-184-73-197-211.compute-1.amazonaws.com:5432/d9mg0f8n3nrkb3'
-
+DATABASE_URL = os.environ['DATABASE_URL']
 
 @app.route('/notes/<url_note_ID>')
 def note_page(url_note_ID):
